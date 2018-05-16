@@ -1,7 +1,11 @@
 ---
-- name: Gather facts
-  openshift_facts:
-    role: common
+- name: missing packages
+  package:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+  - python-ipaddress
+  - PyYAML
 
 - name: create the docker-storage-setup config file
   template:
