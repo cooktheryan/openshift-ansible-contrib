@@ -10,7 +10,7 @@
   with_items: "{{ openshift_required_packages }}"
 
 - name: Start NetworkManager and network
-   service:
+  service:
     name: "{{ item }}"
     state: restarted
     enabled: true
