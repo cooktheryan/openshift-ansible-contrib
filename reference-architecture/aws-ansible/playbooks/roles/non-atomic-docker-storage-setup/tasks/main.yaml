@@ -10,7 +10,7 @@
     owner: root
     group: root
     mode: 0644
-  when: not openshift.common.is_atomic | bool and ansible_distribution != 'CentOS'
+  when: ansible_distribution != 'CentOS'
 
 - name: create the docker-storage-setup config file
   template:
